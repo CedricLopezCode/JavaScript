@@ -1,5 +1,5 @@
 	//Exo Numéro de tel
-
+/*
 var saisie_utilisateur_numero_a_appeler = prompt("entrer le nuléro que vous voulez appeler");
 switch (saisie_utilisateur_numero_a_appeler){
 	case "17":
@@ -25,9 +25,9 @@ else if(saisie_utilisateur_numero_a_appeler == "07"){
 else {
 	alert("Vous voulez appeler quelqu'un");
 }
-saisie_utilisateur_numero_a_appeler == "123"? alert("Vous voulez appeler Cédric"):alert("Vous ne voulez pas appeler Cédric");
-saisie_utilisateur_numero_a_appeler == "007"? console.log("Bond...\n\nJames Bond"): console.log("Ce n'est pas  James Bond");
-
+saisie_utilisateur_numero_a_appeler == "123"? alert("Vous voulez appeler Cédric"):alert("Vous ne voulez pas appeler Cédric")
+saisie_utilisateur_numero_a_appeler == "007"? console.log("Bond....  James Bond"): console.log("Ce n'est pas  James Bond")
+*/
 
 	//Exo boucle
 /*
@@ -52,7 +52,7 @@ do{
 } while(index_do_while < 3)
 */
 //Tableaux
-/*
+
 var fruits = ["oranges", "melon", "oranges", "fraise", "peche"];
 for (ligne = 0; ligne < fruits.length; ligne++){
 	console.log("for ligne " + (ligne+1));
@@ -80,4 +80,3 @@ while(ligne < fruits.length){
 	ligne++;
 }
 console.log("fin while affichage tableau");
-*/
