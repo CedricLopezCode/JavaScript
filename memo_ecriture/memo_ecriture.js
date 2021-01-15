@@ -7,7 +7,7 @@
  \t = tabulation
  */
 
-/*
+
 				//Généralités
 		//Fonctions-type
 
@@ -18,7 +18,7 @@ console.log("Console.log dans inpecter élément puis onglet console"); //comme 
 
 	
 
-		//Portée des variable
+		//Portée des variables
 
 function portee_des_variables() {var test = 7;	return test;}
 console.log(portee_des_variables()); //marche car le return dans la fonction
@@ -45,7 +45,7 @@ nombre = 2;
 nombre > 5 ? console.log("Vrai") : console.log("Faux"); //Faux donc prend le 2eme après le ?(Après les :)
 
 	//Switch case = comparaison valeur exacte
-/*
+
 switch (numéro_du_jour){ //nom de la variable à comparer
 	case 1: //valeurs exactes que peut prendre cette variable
 		console.log("Lundi");
@@ -108,11 +108,14 @@ do{
 	index_do_while ++; //Attention à bien incrémenter dans la boucle sinon boucle infini
 } while(index_do_while < 3)//Condition d'arret
 --------------------------------------------------------------------------------------------------
-		//Tableaux //Attention aux indices qui commencent à 0
+		//Tableaux 
+		//Attention aux indices qui commencent à 0
 
 var notes = [1, 2, 3, 4, 5]; //Attention notes.length = 5 mais le dernier est notes[4]
 //indices  	[0, 1, 2, 3, 4]
 var fruits = ["orange", "melon", "banane", "framboise", "fraise"];
+//indices  	 [0,           1,       2,          3,          4]
+var tableau = Array(10); //crée un tableau de 10, mais posibilité de changer sa taille ensuite
 console.log(fruits[0]); // => orange
 fruits.length //donne la longueur du tableau ==> 5
 console.log(notes.length); //longueur du tableau ==> 5
@@ -124,13 +127,25 @@ for (ligne = 0; ligne < fruits.length; ligne++){
 	console.log("for ligne " + (ligne+1));
 	console.log(fruits[ligne]);
 }
+	//Ajouter supprimer et insérer
+
+	//Forme générique
+//tableau.splice(indice, nombre_d_elements_a_sup, ajout1, ajout2); //ajout facultatif
+	//Supprimer des éléments
+notes.splice(2, 3); //Se place à l'indice 2 et supprime 3 valeurs
+
+	//Ajouter des éléments
+notes.splice(2, 0, 45,45,56,80); //Se place à l'indice 2, supprimme 0 valeurs et ajoute les 4 valeurs AVANT
+
+	//Remplacer des éléments
+notes.splice(2, 4, 45,45,56,80); //Se place à l'indice 2, supprimme 4 valeurs et ajoute les 4 valeurs
 
 	//Recherche d'un mot dans un tableau
-
 var ligne = -1;
 do{
 	ligne ++;
 } while(fruits[ligne] != "banane")
+/*
 -----------------------------------------------------------------------------------------------
 	//Concaténation = mise à la suite
 
@@ -152,23 +167,14 @@ isNaN(valeur_entree) //isNan = is Not a Number  //Booléen donc soit true soit f
 
 	//Changement de type
 
-var numero = prompt("numéro à appeler");
-//Attention le 0 au début des nombres est suppprimé entre la saisie et la comparaison de nombres donc:
-	//Soit on passe par des string
-switch (numero){
-	case "0606060606":
-		console.log(numero);
-		console.log("Par les string");
-	break;
-}
-	//Soit on utilise la fonction parseInt ?????????????????????????????????????????????????????
-switch (parseInt(numero)){
-	case 0606060606:
-		console.log(numero);
-		console.log("Par la fonction parseInt");
-	break;
-}
-??????????????????????????????????????????????????????????????????????????????????????????????????????????
+parseInt(1527.4457)//tronque pour prendre seulement la partie entière
+//parseFloat(5273.7558) //existe aussi mais en pratique très rare
+//objet.toString() //pour convertir un objet en string ????????????????????????????
+Texte_à_ecrire.toLowerCase() // pour mettre en minuscule
+"Texte_à_ecrire".toLowerCase() // pour mettre en minuscule
+Texte_à_ecrire.toUpperCase() // POUR METTRE EN MAJUSCULE
+"Texte_à_ecrire".toUpperCase() // POUR METTRE EN MAJUSCULE
+
 -----------------------------------------------------------------------------------------------------		
 			//Utilisation fonction typique
 
@@ -199,6 +205,8 @@ do{
 }while(on_veut_un_nombre == 0) //bien mettre la valeur initiale
 */
 //---------------------------------------------------------------------------------//
+		//Zone de test
+
 
 //---------------------------------------------------------------------------------//
 	//Test pour memo

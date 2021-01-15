@@ -152,7 +152,7 @@ for (table_de = 1; table_de <= 10; table_de++){
     }
 }
 
-/*
+
 	 //Exo decrementation de 20 à 0 par pas de 2
 
 //initialisation
@@ -189,7 +189,7 @@ do{
 
 //affichage reste
 depart_compte_a_rebours % decrementation == 0 ? alert("Pile poil !") : alert("Dommage il reste :" + "  " + comptage);
-
+/*
 		//Tableaux
 
 var fruits = ["oranges", "melon", "oranges", "fraise", "peche"];
