@@ -4,9 +4,11 @@
  => le caractère suivant ne sera pas interprété
  => utile pour les '' et "" dans les phrases
  \n = retour à la ligne
- \t = tabulation
+ \t = tabulation //à éviter entre les +
  */
-
+ ----------------------------------------------------------------------------------------------------
+--------------Pas fonctionnel sans mise en commentaire, ajout de var et de console.log()----------------
+-----------------------------------------------------------------------------------------------------
 
 				//Généralités
 		//Fonctions-type
@@ -90,7 +92,7 @@ switch (numéro_du_jour){ //....Mais ça peut être volontaire
 		//Les boucles
 
 	//Boucles for //pour un nombre "connu" de passages
-for (index_for = 0; index_for < 3; index_for++){ //(Début, Fin, changement entre 2 passage)
+for (index_for = 0; index_for < 3; index_for++) { //(Début, Fin, changement entre 2 passage)
 	console.log(index_for);
 }
 
@@ -145,7 +147,7 @@ var ligne = -1;
 do{
 	ligne ++;
 } while(fruits[ligne] != "banane")
-/*
+
 -----------------------------------------------------------------------------------------------
 	//Concaténation = mise à la suite
 
@@ -203,7 +205,7 @@ do{
 	//parseInt(valeur_entree)%1 != 0 ? alert("Ce n'est pas un nombre") : on_veut_un_nombre=parseInt(valeur_entree);
 	//equivalente à la ligne au dessus pour vérifier que c'est bien un nombre
 }while(on_veut_un_nombre == 0) //bien mettre la valeur initiale
-*/
+
 //---------------------------------------------------------------------------------//
 		//Zone de test
 

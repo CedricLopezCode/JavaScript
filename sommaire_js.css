@@ -1,5 +1,30 @@
-body{
-	background-image: 
+body{background: black;}
+h1{color: gold;}
+h1 span {color: red;}
+#nav_flex{
+	background: green;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+	max-width: all;
+	flex-wrap: wrap;
+}
+#nav_flex a{
+	text-decoration: none;
+	font-weight: bold;
+	color: gold;
+	padding: 10px;
+	font-size: 30px;
+}
+#nav_flex img{
+	padding: 0;
+	width: 100px;
+	height: 100px;
+}
+#nav_flex a:hover{ 
+	background: red;
+	color: yellow;
 }
 
 .conteneur{

@@ -1,5 +1,5 @@
 
-/*
+
 			//Partie Saisie utilisateur //Au choix Alerte ou tableau pré-rempli
 
 	//Saisie d'un nombre de chiffre à comparer
@@ -11,12 +11,13 @@ do{
 }while(nombre_de_chiffre_a_comparer == 0)
 
 	//Saisie des X chiffre à comparer
+var tableau_des_chiffres_a_compare = Array(nombre_de_chiffre_a_comparer)
 for(var x_ieme_chiffre_a_comparer = 0; x_ieme_chiffre_a_comparer < nombre_de_chiffre_a_comparer; x_ieme_chiffre_a_comparer++){
 	do{
 		var saisie_nombre = prompt("rentrer le " + (x_ieme_chiffre_a_comparer+1) +" ième chiffre à comparer");
 		isNaN(saisie_nombre) ? alert("Il faut rentrer un chiffre") : tableau_des_chiffres_a_compare[x_ieme_chiffre_a_comparer] = saisie_nombre;
 	}while(tableau_des_chiffres_a_compare[x_ieme_chiffre_a_comparer] == 0)
-}*/
+}
 	//Partie Tableau de Test pour éviter de devoir rentrer des valeurs
 /*
 var tableau_des_chiffres_a_compare = [159,151,91,159,19,11,91,19,3,3,3,3,11519446,         6,67,5];
