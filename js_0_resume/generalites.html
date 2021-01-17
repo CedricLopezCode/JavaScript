@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>XXXXXXXXXXXXX</title>
+	<title>Généralités</title>
 	<!-- Constant pour tous -->  
 	<link rel="icon" type="img/png" href="../Ressources_test/Images/triforce.png">
 	<link rel="stylesheet" type="text/css" href="../Ressources_test/Document/bootstrap.min.css">
@@ -12,7 +12,12 @@
 	<script type="text/javascript" src="../../01_HTML_CSS/sommaire_total_cda.js"></script>
 	<!-- A changer pour chaque fichier  -->
 	<link rel="stylesheet" type="text/css" href="XXXXXXXXXXXXXXXXXX.css">
-	<script type="text/javascript" src="XXXXXXXXXXXXXXXXXX.js"></script>
+	<script type="text/javascript" src="generalites.js"></script>
+
+
+	<script type="text/javascript">
+		alert("Si je veux pas m'embeter à créer un fichier .js j'écris mon javascript entre les balises script dans le head comme je fais là");
+	</script>
 </head>
 <body>
 	<header>
@@ -70,11 +75,33 @@
 	</nav>
 	</header>
 
-	<h1 class="titre_page"><span>XXXXXXXXXXXXXXXXXX</span></h1>
+	<h1 class="titre_page"><span>Généralités</span></h1>
 
 	<div class="conteneur">
-		<h2 class="titre_section">XXXXXXXXXX</h2>
-		<h3 class="titre_paragraphe">XXXXXXXX</h3>
+//JS détecte tout seul quel type de variable c'est donc pas besoin de préciser int, float, string, array
+<br>  \ = caractère d'échappement 
+<br>=> le caractère suivant ne sera pas interprété
+<br>=> utile pour les '' et "" dans les phrases
+<br> \n = retour à la ligne
+<br>\t = tabulation //à éviter entre les +
+
+<hr>
+		<br>//Fonctions Basiques
+
+<br>alert("Pop-up à valider pour continuer");//Aucune interaction possible tant qu'on valide pas //Sert surtout à débuguer
+<br>confirm("Voulez-vous vraiment supprimer ?"); //Demande une confirmation oui ou non
+<br>prompt("entrer votre nom"); //donne un champs de saisie pour rentrer = string
+<br>console.log("Console.log dans inpecter élément puis onglet console"); //comme alert mais plus discret car ne s'affiche pas sur l'écran et ne demande pas d'intéraction
+
+	
+<hr>
+		<br>//Portée des variables
+
+<br>function portee_des_variables() {var test = 7;	return test;}
+<br>console.log(portee_des_variables()); //marche car le return dans la fonction
+<br>//console.log(test); //ne marche pas car la variable n'existe pas en dehors de la fonction = variable locale
+
+
 	</div>
 </body>
 </html>

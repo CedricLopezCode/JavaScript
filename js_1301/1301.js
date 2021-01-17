@@ -30,7 +30,7 @@ saisie_utilisateur_numero_a_appeler == "007"? console.log("Bond...\n\nJames Bond
 
 
 	//Exo boucle
-/*
+
 var index_while = 0;
 
 while(index_while < 3){
@@ -50,7 +50,7 @@ do{
 	index_do_while ++;
 	console.log("J'aime les boucles do while")
 } while(index_do_while < 3)
-*/
+
 //Tableaux
 /*
 var fruits = ["oranges", "melon", "oranges", "fraise", "peche"];
