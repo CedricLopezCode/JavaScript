@@ -35,5 +35,13 @@ console.log("5 ème élément du tableau: " + semaine[5]) ;
 // ecrit direct dans le html
 document.open();
 document.write(semaine);
+document.writeln(3);
+document.write(semaine);
+document.write("<div> div1" + semaine + "</div>");// permet de faire comme dans le html
+document.write("<div> div2" + semaine + "</div>");// permet de faire comme dans le html
+document.write("<div> div3" + semaine + "</div>");// permet de faire comme dans le html
+document.write("<span> span1" + semaine + "</span>");// permet de faire comme dans le html
+document.write("<span> span2" + semaine + "</span>");// permet de faire comme dans le html
+document.write("<span> span3" + semaine + "</span>");// permet de faire comme dans le html
 document.close();
 //-------------------------------------------------------------------------------
