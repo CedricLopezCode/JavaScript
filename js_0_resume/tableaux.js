@@ -67,6 +67,8 @@ do{
 	ligne ++;
 } while(fruits[ligne] != "banane")
 
+tableau.indexOf("mot recherché");//renvoie l'indice auquel il trouve l'élément recherché
+
 	
 		//Tableau en 2D
 var table_de_multiplication = Array(10);

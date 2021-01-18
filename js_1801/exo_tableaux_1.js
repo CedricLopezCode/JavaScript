@@ -20,7 +20,12 @@ semaine.push("dimanche")
 //tableau.unshift() si on veut rajouter une valeur au début du tableau
 console.log(semaine) ;
 
-semaine[1] = "mardi"
+//semaine[1] = "mardi";
+var index_mardi = semaine.indexOf("mar");
+console.log("index de mar = " + index_mardi);
+console.log("index de mar = " + index_mardi);
+//semaine[index_mardi] = "mardi";
+semaine[semaine.indexOf("mar")] = "mardi";
 console.log(semaine) ;
 console.log("Longueur du tableau: " + semaine.length) ;
 console.log("5 ème élément du tableau: " + semaine[5]) ;
