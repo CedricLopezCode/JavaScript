@@ -14,9 +14,17 @@ do{
 }while(numero_l_annee == -1)
 
 //Analyse du numéro de l'année
-if(numero_l_annee % 4 == 0 && numero_l_annee % 100 != 0 || numero_l_annee % 400 == 0)
+if((numero_l_annee % 4 == 0 && numero_l_annee % 100 != 0) || numero_l_annee % 400 == 0)
 {
 	alert("L'année " + numero_l_annee + " est une année bissextile" );
 }else{
 	alert("L'année " + numero_l_annee + " n'est pas une année bissextile" );
 }
+
+var donnee_rentree = prompt("Chiifre = 2021 ?");
+
+donnee_rentree == 2021 ? console.log("Prompt = Int avec ==") : console.log("== déjà différent");
+donnee_rentree === 2021 ? console.log("Prompt = Int avec ===") : console.log("=== différent type");
+// == compare juste ja valeur
+// === compare aussi le type
+// donc évite la vérification au départ
