@@ -29,6 +29,6 @@ console.log("5 ème élément du tableau: " + semaine[5]) ;
 //------------------------------------------------------------------------------------
 // ecrit direct dans le html
 document.open();
-document.write(semaine.toString());
+document.write(semaine);
 document.close();
 //-------------------------------------------------------------------------------

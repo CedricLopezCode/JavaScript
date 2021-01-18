@@ -28,3 +28,6 @@ donnee_rentree == 2021 ? console.log("Prompt = Int avec ==") : console.log("== d
 donnee_rentree === 2021 ? console.log("Prompt = Int avec ===") : console.log("=== différent type");
 // == compare juste ja valeur
 /// === compare aussi le type
+
+break; //sort de la boucle // tue le process
+continue; //reprend le process
