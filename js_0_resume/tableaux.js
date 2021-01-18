@@ -20,6 +20,25 @@ for (ligne = 0; ligne < fruits.length; ligne++){
 }
 	//Ajouter supprimer et insérer
 
+	//Supprimer le 1er ou dernier élément
+tableau.pop(); //pour supprimer le dernier element du tableau
+tableau.shift(); //si on veut supprimer la 1ère valeur du tableau
+console.log(tableau.pop()); //a faire pour voir quel élément a été supprimé
+//Attention ça répète le pop
+
+
+//Ajouter au début ou à la fin du tableau
+tableau.push("Dimanche") //ajouter un élément à la fin du tableau
+tableau.unshift("Lundi") //Rajouter une valeur au début du tableau
+
+
+// ecrit direct dans le html
+document.open();
+document.write(semaine.toString());
+document.close();
+	
+
+	//splice
 //Forme générique
 //tableau.splice(indice, nombre_d_elements_a_sup, ajout1, ajout2); //ajout facultatif
 
