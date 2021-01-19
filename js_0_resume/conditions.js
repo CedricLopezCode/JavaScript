@@ -11,7 +11,7 @@ else if(nombre < 5){
 else{//Si tous les if et else if d'avant sont false
 	console.log("Ton chiffre est égal à 5");
 }
-
+if(booleen){}//pas besoin de préciser == true
 			//Ternaires = Conditions simple en 1 lignes
 	//Mais ne marche que s'il n'y a que 1 instruction
 
