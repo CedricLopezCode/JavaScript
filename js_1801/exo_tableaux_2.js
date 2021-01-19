@@ -9,7 +9,7 @@ On affiche à nouveau la liste.
 */
 
 var fruits = ["Banane", "Raisin", "Pomme"];
-console.log(fruits);
+console.log(fruits.join()); //transforme en string
 
 var fruit_recherche = prompt("Choisir un nom de fruit");
 var fruit_dans_la_liste = false;
