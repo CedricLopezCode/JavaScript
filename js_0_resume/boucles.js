@@ -20,3 +20,10 @@ do{
 	console.log(index_do_while);
 	index_do_while ++; //Attention à bien incrémenter dans la boucle sinon boucle infini
 } while(index_do_while < 3)//Condition d'arret
+
+
+
+
+break; //sort de la boucle // tue le process 
+//permet de sortir d'une boucle quand on a trouvé ce qu'on cherche
+continue; //reprend le process ?????????????????????????????????????

@@ -1,4 +1,4 @@
-var numero_l_annee = -1
+/*var numero_l_annee = -1
 do{
 	var donnee_rentree = prompt("rentrer le numéro d'une année pour savoir si elle est bisextille ou pas");
 	//Vérification que c'est un nombre entier
@@ -12,7 +12,8 @@ do{
 		numero_l_annee = donnee_rentree
 	}
 }while(numero_l_annee == -1)
-
+*/
+var numero_l_annee = prompt_verifie_int("rentrer le numéro d'une année pour savoir si elle est bisextille ou pas");
 //Analyse du numéro de l'année
 if((numero_l_annee % 4 == 0 && numero_l_annee % 100 != 0) || numero_l_annee % 400 == 0)
 {
