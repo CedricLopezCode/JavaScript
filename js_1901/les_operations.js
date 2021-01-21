@@ -1,4 +1,5 @@
 function les_operations(){
+	
 	function addition(x, y){
 		console.log(x+y);
 	}

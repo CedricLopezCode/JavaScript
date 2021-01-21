@@ -1,4 +1,4 @@
-var compteur_champs_valides = 0;
+var compteur_champs_valides = 5;
 var submit = document.getElementById("bouton_envoyer");
 var les_inputs = document.querySelectorAll("input");
 var le_textarea = document.querySelector("textarea");
@@ -86,15 +86,8 @@ function verif(){
 
 //------------------------------------------------------------------------------------------------------
 		//Refaire
-var compteur_champs_valides = 0;
-var submit = document.getElementById("bouton_envoyer");
-var les_inputs = document.querySelectorAll("input");
-var le_textarea = document.querySelector("textarea");
-
-
-
+/*
 submit.onclick = verifier;
-le_tel.addEventListener("keyup", verifier_numero)
 
 function verifier() {
 	//verif input
@@ -119,14 +112,20 @@ function verifier() {
 	if(compteur_champs_valides != les_inputs.length + 1){//1 text area
 		return false;
 	} 
-}
-//--------------------------------------------------------------------------------------------------------
-	//verif numero en direct
-var le_tel = document.querySelector("#numero_de_tel");
-le_tel.addEventListener("keyup", verifier_numero);
 
 
-function verifier_numero(){
-	var tel_regex = /^(06|01)[0-9]{8}$/;
-	le_tel.test(tel_regex) ? le_tel.style.background = "lime" : le_tel.style.background = "red" ;
+}*/
+function change(){
+	ma_classe_test.style.background = "red";
 }
+function delete_supprime(){
+	ma_classe_test.style.background = "green";
+}
+
+var ma_classe_test = document.querySelector('.test');
+ma_classe_test.addEventListener("mouseover", change);
+ma_classe_test.addEventListener("mouseout", delete_supprime);
+
+
+
+
