@@ -1,6 +1,7 @@
 function test_sans_argument(){
 	console.log("test");
 }
+//meme si on voit pas en fait elle return true par defaut
 function test_avec_argument(arg_1){
 	console.log(arg_1);
 }
