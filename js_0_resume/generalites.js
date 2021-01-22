@@ -63,7 +63,7 @@ console.log(mes_classes); //affiche le nombre de classe de l'élément qu'il y a
 console.log(mes_classes.classList); //fait un tableau de tous les noms de classe associés à l'élément sur la meme ligne
 mes_classes.add("nouvelle_classe"); //ajouter une classe dans la ligne
 mes_classes.remove("nouvelle_classe"); //supprmer une classe dans la ligne
-
+mes_classes.toggle("nouvelle_classe"); //alterne entre ajouter/supprimer
 	//evenement
 window.setInterval(evenement, temps);
 element.onclick = function(); //quand on clique //posible direct dans html

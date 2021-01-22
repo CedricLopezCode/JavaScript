@@ -70,7 +70,7 @@ function test_sans_click() {
 
 //Corection
 
-function verif(){
+/*function verif(){
 	if(document.querySelector("#nom").value == ""){
 		document.querySelector("#nom").focus();//se concentre sur le champs faux
 		document.querySelector("#nom").style.background = "red";
@@ -81,7 +81,7 @@ function verif(){
 		document.querySelector("#prenom").style.background = "red";
 		return false; //permet d'eviter l'envoie quand on click
 	}
-}
+}*/
 /*document.querySelector("#bouton_envoyer").onclick = function(){}*/
 
 //------------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ var le_textarea = document.querySelector("textarea");
 
 
 submit.onclick = verifier;
-le_tel.addEventListener("keyup", verifier_numero)
+//le_tel.addEventListener("keyup", verifier_numero);
 
 function verifier() {
 	//verif input
@@ -122,11 +122,93 @@ function verifier() {
 }
 //--------------------------------------------------------------------------------------------------------
 	//verif numero en direct
+
 var le_tel = document.querySelector("#numero_de_tel");
+
+le_tel.addEventListener("keyup", verifier_nombre);
 le_tel.addEventListener("keyup", verifier_numero);
 
 
+function verifier_nombre(){
+	console.log(le_tel.value);
+	isNaN(le_tel.value) ? alert("On veut un numéro") : "";
+	isNaN(le_tel.value) ? le_tel.style.background = "orange" : "";
+	
+}
 function verifier_numero(){
 	var tel_regex = /^(06|01)[0-9]{8}$/;
-	le_tel.test(tel_regex) ? le_tel.style.background = "lime" : le_tel.style.background = "red" ;
+	//tel_regex.test(le_tel.value) ? le_tel.style.background = "lime" : le_tel.style.background = "red" ;
+	if(tel_regex.test(le_tel.value)){
+		le_tel.style.background = "lime";
+	}else{
+		le_tel.style.background = "yellow";
+		le_tel.innerHTML="<p style=\"color:red\">Invalide </p>"; 
+		return false;
+	} 
 }
+//-----------------------------------------------------------------------------------------------
+//Correction
+/*function verif() {
+	var error = 0;
+	var tous_les_inputs_type_text = document.querySelectorAll('input[type="text"]');
+	console.log(tous_les_inputs_type_text);
+
+	for(var index=0; index < tous_les_inputs_type_text.length; index++){
+		if(tous_les_inputs_type_text[index].value == ''){
+			tous_les_inputs_type_text[index].focus();
+			tous_les_inputs_type_text[index].style.background = 'red';
+
+			error++;
+		}else{
+			tous_les_inputs_type_text[index].style.background = 'white';
+
+		}
+	}
+
+	//var mobile =  /^(?:(?:+|00)33[\s.-]{0,3}(?:(0)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/gm;
+
+	var mobile = /^(01|02|03|04|05|06|07|08|09)[0-9]{8}$/;
+	
+	if (!mobile.test(document.querySelector('#tel').value)) {
+		alert('Numero KO')
+		document.querySelector('#tel').focus();
+		document.querySelector('#tel').style.background='red';
+		return false;
+	}
+
+	console.log(error);
+	if(error>0){	
+		return false;
+	}
+}
+/*document.querySelector('#submit').onclick=function () {
+	alert("OK")
+}*/
+
+/*
+var tel = document.querySelector('#tel');
+
+tel.addEventListener('keyup', function () {
+
+	if (isNaN(tel.value)) {
+		document.querySelector('.error').innerHTML='<p style="color:red">Pas valide </p>';
+	}
+	else{
+
+		document.querySelector('.error').innerHTML='';
+	}
+})*/
+//------------------------------------------------------------------------------------
+		//bug addEventListener  //Résolu
+
+function change() {
+	ma_classe_test.style.background="red";
+}
+function delete_supprime() {
+	ma_classe_test.style.background="lime";
+}
+
+var ma_classe_test = document.querySelector(".test");
+
+ma_classe_test.addEventListener("mouseover", change)
+ma_classe_test.addEventListener("mouseout", delete_supprime)

@@ -1,4 +1,4 @@
-function calculatrice(){
+
 	var submit = document.getElementById("submit");
 	console.log(submit);
 
@@ -52,4 +52,4 @@ function calculatrice(){
 		var signe_operation = document.querySelector("#signe_operation").value;
 		afficher_resultat(premier_nombre, deuxieme_nombre, signe_operation);
 	}
-}
+
