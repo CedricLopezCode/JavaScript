@@ -6,7 +6,7 @@ verifier_pseudo();
 function verifier_pseudo(){
 	var nom_utilisateur = document.getElementById("nom_utilisateur");
 	while(pseudo == ""){
-		pseudo = "fffff" //prompt("Saisir votre nom");
+		pseudo = prompt("Saisir votre nom");
 	}
 	nom_utilisateur.innerHTML = pseudo;
 }
@@ -96,7 +96,7 @@ var deuxieme_nombre = document.querySelector("#deuxieme_nombre");
 var signe_operation = document.querySelector("#signe_operation");
 var message_over = document.querySelector("#message_over");
 
-//*******  		Choix à Faire  		*************************
+//************************  Choix à Faire  ******************************************
 
 //Evenements Version JS pur
  premier_nombre.addEventListener("mouseover", message_calculatrice_nombre);
@@ -113,7 +113,8 @@ signe_operation.addEventListener("mouseover", message_calculatrice_signe_bootstr
  premier_nombre.addEventListener("mouseout", message_calculatrice_out_bootstrap);
 deuxieme_nombre.addEventListener("mouseout", message_calculatrice_out_bootstrap);
 signe_operation.addEventListener("mouseout", message_calculatrice_out_bootstrap);
-//*******************************************************************
+
+//*************************************************************************************
 
 //Functions Version JS pur
 function message_calculatrice_nombre(){
