@@ -1,4 +1,4 @@
-//function exo_tableaux_1(){
+function exo_tableaux_1(){
 	/*Soit le tableau suivant : Var semaine = [‘lundi’, ‘mar’, ‘mercredi’, ‘jeudi’, ‘vendredi’, ‘samedi’, ‘dimanc’] ;
 	- Retirer la dernière valeur du tableau
 	- Afficher les valeurs du tableau en utilisant la méthode document.write
@@ -46,4 +46,4 @@
 	document.write("<span> span3" + semaine + "</span>");// permet de faire comme dans le html
 	document.close();
 	//-------------------------------------------------------------------------------
-//}
+}

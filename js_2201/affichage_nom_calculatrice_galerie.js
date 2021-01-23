@@ -6,7 +6,7 @@ verifier_pseudo();
 function verifier_pseudo(){
 	var nom_utilisateur = document.getElementById("nom_utilisateur");
 	while(pseudo == ""){
-		pseudo = prompt("Saisir votre nom");
+		pseudo = "fffff" //prompt("Saisir votre nom");
 	}
 	nom_utilisateur.innerHTML = pseudo;
 }
@@ -54,6 +54,7 @@ function calculatrice(){
 				alert("erreur");
 			break;
 		}
+
 		return resultat;
 	}
 	//console.log(faire_le_calcul(3,5,"*"));
@@ -61,6 +62,9 @@ function calculatrice(){
 	function afficher_resultat(premier_nombre, deuxieme_nombre, signe_operation){
 		alert(premier_nombre + " " + signe_operation + " " + deuxieme_nombre + " = " + faire_le_calcul(premier_nombre, deuxieme_nombre, signe_operation))
 	}
+	document.querySelector("#premier_nombre").value = ""; //pour effacer
+	document.querySelector("#deuxieme_nombre").value = ""; //pour effacer
+	return false;//pour pas que ça recharge la page
 }
 
 //Partie Apparition/Disparition
@@ -83,63 +87,41 @@ function disparition_calc(){
 	affichage_calc.style.display = "none";
 	
 }
-//----------------------------------------------------------------------
-//essai multi-class
-/*var apparition = document.querySelector("#apparition_calculatrice");
-var disparition = document.querySelector("#disparition_calculatrice");
-var affichage_calc = document.querySelector("#calculatrice");
-
-
-console.log(affichage_calc.classList);
-apparition.onclick = apparition_calculatrice;
-disparition.onclick = disparition_calculatrice;
-function apparition_calculatrice(){
-	affichage_calc.classList.remove("dsparu");
-	affichage_calc.classList.add("calculatrice");
-
-}
-function disparition_calculatrice(){
-
-	affichage_calc.classList.remove("calculatrice");	
-	affichage_calc.classList.add("dsparu");
-}
-*/
-//--------------------------------------------------------------
-// echec style reecrire class
-/*
-function apparition_calc(){
-	affichage_calc.outerHTML = '<section id="calculatrice" style="background: blue; height: 200px; padding: 20px;">'
-}
-function disparition_calc(){
-	
-	disparition.outerHTML = '<span id="disparition_calculatrice" style="display: none;">Disparition Calculatrice</span>'
-}
-*/
-
 
 //----------------------------------------------------------------------------------------
 	//Exo 3 Message Calculatrice
+
 var premier_nombre = document.querySelector("#premier_nombre");
 var deuxieme_nombre = document.querySelector("#deuxieme_nombre");
 var signe_operation = document.querySelector("#signe_operation");
 var message_over = document.querySelector("#message_over");
 
- premier_nombre.addEventListener("mouseover", message_calculatrice_nombre)
-deuxieme_nombre.addEventListener("mouseover", message_calculatrice_nombre)
-signe_operation.addEventListener("mouseover", message_calculatrice_signe)
- premier_nombre.addEventListener("mouseout", message_calculatrice_out)
-deuxieme_nombre.addEventListener("mouseout", message_calculatrice_out)
-signe_operation.addEventListener("mouseout", message_calculatrice_out)
+//*******  		Choix à Faire  		*************************
 
-function message_calculatrice(){
-	//? message_calculatrice_nombre : message_calculatrice_signe ;
-}
+//Evenements Version JS pur
+ premier_nombre.addEventListener("mouseover", message_calculatrice_nombre);
+deuxieme_nombre.addEventListener("mouseover", message_calculatrice_nombre);
+signe_operation.addEventListener("mouseover", message_calculatrice_signe);
+ premier_nombre.addEventListener("mouseout", message_calculatrice_out);
+deuxieme_nombre.addEventListener("mouseout", message_calculatrice_out);
+signe_operation.addEventListener("mouseout", message_calculatrice_out);
+
+//Evenements Version Boostrap
+ premier_nombre.addEventListener("mouseover", message_calculatrice_nombre_bootstrap);
+deuxieme_nombre.addEventListener("mouseover", message_calculatrice_nombre_bootstrap);
+signe_operation.addEventListener("mouseover", message_calculatrice_signe_bootstrap);
+ premier_nombre.addEventListener("mouseout", message_calculatrice_out_bootstrap);
+deuxieme_nombre.addEventListener("mouseout", message_calculatrice_out_bootstrap);
+signe_operation.addEventListener("mouseout", message_calculatrice_out_bootstrap);
+//*******************************************************************
+
+//Functions Version JS pur
 function message_calculatrice_nombre(){
 	message_over.innerHTML = "Saisir un nombre";
 	message_over.style.background = "yellow";
 	message_over.style.color = "blue";
 	message_over.style.padding = "5px";
-	message_over.style.height = "20px";
+	message_over.style.height = "40px";
 }
 function message_calculatrice_signe(){
 	message_over.innerHTML = "Saisir une Opération  + - * / % ";
@@ -147,7 +129,7 @@ function message_calculatrice_signe(){
 	message_over.style.color = "blue";
 	message_over.style.display = "flex";
 	message_over.style.padding = "5px";
-	message_over.style.height = "20px";
+	message_over.style.height = "40px";
 }
 function message_calculatrice_out(){
 	message_over.innerHTML = "";
@@ -157,6 +139,21 @@ function message_calculatrice_out(){
 	//message_over.style.height = "none";
 	message_over.style = "default";
 }
+
+//Functions Version Boostrap
+function message_calculatrice_nombre_bootstrap(){
+	message_over.innerHTML = "Saisir un nombre";
+	message_over.classList.toggle("d-none");
+}
+function message_calculatrice_signe_bootstrap(){
+	message_over.innerHTML = "Saisir une Opération  + - * / % ";
+	message_over.classList.toggle("d-none");
+}
+function message_calculatrice_out_bootstrap(){
+	message_over.classList.toggle("d-none");
+}
+
+//-----------------------------------------------------------------------
 	//Exo 4: Affichage Galerie 
 
 var les_miniatures = document.querySelectorAll(".miniatures");

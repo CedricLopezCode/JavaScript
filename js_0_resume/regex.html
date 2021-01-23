@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>XXXXXXXXXXXXX</title>
+	<title>Les Regex</title>
 	<!-- Constant pour tous -->  
 	<link rel="icon" type="img/png" href="../Ressources_test/Images/triforce.png">
 	<link rel="stylesheet" type="text/css" href="../Ressources_test/Document/bootstrap.min.css">
@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="../fonctions_redondantes.js"></script>
 	<!-- A changer pour chaque fichier  -->
 	<link rel="stylesheet" type="text/css" href="XXXXXXXXXXXXXXXXXX.css">
-	<script type="text/javascript" src="XXXXXXXXXXXXXXXXXX.js"></script>
+	<script type="text/javascript" src="regex.js"></script>
 </head>
 <body>
 	<header>
@@ -77,11 +77,30 @@
 	</nav>
 	</header>
 
-	<h1 class="titre_page"><span>XXXXXXXXXXXXXXXXXX</span></h1>
+	<h1 class="titre_page"><span>Les Regex</span></h1>
 
 	<div class="conteneur">
 		<h2 class="titre_section">XXXXXXXXXX</h2>
 		<h3 class="titre_paragraphe">XXXXXXXX</h3>
+<form>
+	<label>Nom :</label>
+	<input type="text" name="nom" id="nom">
+	<br>
+	<label>Prénom :</label>
+	<input type="text" name="prenom" id="prenom">
+	<br>
+	<label>Téléphone :</label>
+	<input type="tel" name="numero_de_tel" id="numero_de_tel">
+	<br>
+	<label>Email :</label>
+	<input type="email" name="email" id="email">
+	<br>
+	<label>Votre question: </label>
+	<textarea rows="10" cols="100"></textarea>
+	<br>
+	<button id="bouton_envoyer" onclick="return verif();">Envoyer</button>
+</form>
+<div id="eeeeee"></div>
 	</div>
 </body>
 </html>

@@ -24,3 +24,6 @@ function prompt_verifie_nombre(message_du_prompt){
 	}while(nom_du_chiffre_quon_attend == -1)
 	return nom_du_chiffre_quon_attend;
 }
+function recuperer_source(){
+	
+}
