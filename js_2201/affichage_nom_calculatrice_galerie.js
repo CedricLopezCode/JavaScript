@@ -64,7 +64,8 @@ function calculatrice(){
 	}
 	document.querySelector("#premier_nombre").value = ""; //pour effacer
 	document.querySelector("#deuxieme_nombre").value = ""; //pour effacer
-	return false;//pour pas que ça recharge la page
+	//return false;//pour pas que ça recharge la page  //mais à éviter car on s'attend à une fonction plus haut
+	event.preventDefault(); //pour pas que ça recharge la page
 }
 
 //Partie Apparition/Disparition
@@ -97,7 +98,7 @@ var signe_operation = document.querySelector("#signe_operation");
 var message_over = document.querySelector("#message_over");
 
 //************************  Choix à Faire  ******************************************
-
+/*
 //Evenements Version JS pur
  premier_nombre.addEventListener("mouseover", message_calculatrice_nombre);
 deuxieme_nombre.addEventListener("mouseover", message_calculatrice_nombre);
@@ -105,7 +106,7 @@ signe_operation.addEventListener("mouseover", message_calculatrice_signe);
  premier_nombre.addEventListener("mouseout", message_calculatrice_out);
 deuxieme_nombre.addEventListener("mouseout", message_calculatrice_out);
 signe_operation.addEventListener("mouseout", message_calculatrice_out);
-
+*/
 //Evenements Version Boostrap
  premier_nombre.addEventListener("mouseover", message_calculatrice_nombre_bootstrap);
 deuxieme_nombre.addEventListener("mouseover", message_calculatrice_nombre_bootstrap);
@@ -179,11 +180,26 @@ function agrandir(){
 }
 */
 //les attributs
-var grande_image = document.querySelector(".grande_image");console.log(grande_image);
-var src_grande_image = grande_image.getAttribute("src");console.log(src_grande_image);
+var grande_image = document.querySelector(".grande_image");//console.log(grande_image);
+var src_grande_image = grande_image.getAttribute("src");//console.log(src_grande_image);
 //les_miniatures.onclick = echange_src(this); //ne marche pas car this que depuis html
 function echange_src(miniature_selectionnee){
-	var src_miniature = miniature_selectionnee.getAttribute("src");console.log(src_miniature);
-	grande_image.setAttribute("src", src_miniature);console.log(grande_image);
+	var src_miniature = miniature_selectionnee.getAttribute("src");//console.log(src_miniature);
+	grande_image.setAttribute("src", src_miniature);//console.log(grande_image);
 }
+function echange_src_js(){
+	var src_miniature = this.getAttribute("src");//console.log(src_miniature);
+	grande_image.setAttribute("src", src_miniature);//console.log(grande_image);
+}
+//--------------------------------------------------------------------------------
+//Correction
+var tableau_toutes_les_images = document.querySelectorAll(".miniatures");
 
+function clique(){
+	var getSrc = this.getAttribute("src");
+	grande_image = '<img src="' + getSrc+'">';	
+
+}
+for(var index = 0; index < tableau_toutes_les_images.length; index++){
+	tableau_toutes_les_images[index].addEventListener("click", clique);
+}

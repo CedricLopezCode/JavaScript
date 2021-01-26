@@ -19,6 +19,9 @@ function test_avec_return(arg_1, arg_2 = 2){
 }
 console.log(test_avec_return(15,3));
 
+	//return false;//pour pas que ça recharge la page  //mais à éviter car on s'attend à une fonction plus haut
+	event.preventDefault(); //pour pas que ça recharge la page
+
 	
 
 		//Portée des variables

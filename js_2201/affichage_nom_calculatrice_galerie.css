@@ -8,9 +8,11 @@
 }
 #apparition_calculatrice{
 	text-decoration: none;
+	cursor: pointer;
 }
 #disparition_calculatrice{
 	text-decoration: none;
+	cursor: pointer;
 }
 
 /*

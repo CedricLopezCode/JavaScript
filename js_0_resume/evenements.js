@@ -11,6 +11,9 @@ element.onkeyup = function(); //utilisé principalement sur les formulaire pour 
 element.onkeydown = function(); //utilisé principalement sur les formulaire //par exemple fond rouge si un probleme
 element.onsubmit = function(); //utilisé principalement sur les formulaire //par exemple fond rouge si un probleme
 
+	//ecouteur
+objet.addEventListener("keyup", function);
+
 	//toggle
 window.setInterval(function(){
 	mes_classes.toggle("nouvelle_classe"); //alterne entre ajouter/supprimer
