@@ -13,8 +13,26 @@ element.onsubmit = function(); //utilisé principalement sur les formulaire //pa
 
 	//ecouteur
 objet.addEventListener("keyup", function);
+event.preventDefault(); //pour pas que ça recharge la page
 
 	//toggle
 window.setInterval(function(){
 	mes_classes.toggle("nouvelle_classe"); //alterne entre ajouter/supprimer
 },1000) //temps de changement en ms
+
+	//L'objet Event
+function show(event){//event mot clef comme this
+	event.preventDefault(); //boque envoie formulaire
+	console.log(event.clientX);
+	console.log(event.clientY);
+}
+
+document.querySelector("body").addEventListener("mouseover",show);
+
+function montre(e){ //e = event mais moins pratique
+	var coorX = e.clientX;
+	var coorY = e.clientY;
+
+	document.querySelector("body").innerHTML = "X" + coorX + "Y" + coorY
+}
+document.addEventListener("mouseover", montre);
