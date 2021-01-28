@@ -36,3 +36,16 @@ function montre(e){ //e = event mais moins pratique
 	document.querySelector("body").innerHTML = "X" + coorX + "Y" + coorY
 }
 document.addEventListener("mouseover", montre);
+
+var position = document.querySelector(".test");
+
+document.addEventListener("mousemove", function(event){
+	position.innerHTML = "Position X " + event.clientX + "px <br> PositionY: " +event.clientY + "px";
+} );
+document.querySelector("form").addEventListener("submit", function(e){
+	e.preventDefault();
+	document.querySelector(".test").style.background = "red";
+	var couleur = document.querySelector("#couleur");
+	console.log(couleur);
+	document.querySelector("form").setAttribute("style", "background: #" + couleur.value+";");
+});
