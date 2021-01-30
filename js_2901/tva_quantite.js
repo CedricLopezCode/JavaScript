@@ -42,13 +42,27 @@ function calculs_et_affichage(){
 //----------------------------------------------------------------
 	//Saisie manuelle Prix HT
 champs_valeur_ht.ondblclick = change_valeur_ht;
-//input_ht.valid = recup_valeur_ht;
 function change_valeur_ht(){
-	champs_valeur_ht.innerHTML = '<form><input type="number" id"input_ht"></form>';
-	return document.querySelector("#input_ht");
+	champs_valeur_ht.innerHTML = '<form><input type="number" id="input_ht"></form>';
+	var input_ht = document.querySelector("#input_ht");
+	document.querySelector("form").onsubmit = recup_valeur_ht ;
 }
 function recup_valeur_ht(){
-	valeur_ht = document.querySelector("#input_ht").value;
+	input_ht.value == "" ? "": valeur_ht = parseFloat(input_ht.value);
 	champs_valeur_ht.innerHTML = valeur_ht;
+	calculs_et_affichage();
 	event.preventDefault();
 }
+	//Saisie manuelle tva
+champs_tva_choisi.ondblclick = change_valeur_tva;
+function change_valeur_tva(){
+	champs_tva_choisi.innerHTML = '<form><input type="number" id="input_tva"></form>';
+	var input_tva = document.querySelector("#input_tva");
+	document.querySelector("form").onsubmit = recup_valeur_tva;
+}
+function recup_valeur_tva(){
+	input_tva.value == "" ? "": taux_tva_choisi = parseFloat(input_tva.value);
+	calculs_et_affichage();
+	event.preventDefault();
+}
+//----------------------------------------------------------------

@@ -34,11 +34,7 @@ function change_valeur_ht(){
 	document.querySelector("form").onsubmit = recup_valeur_ht ;
 }
 function recup_valeur_ht(){
-	console.log(input_ht);
-	console.log(input_ht.value);
-	valeur_ht = parseFloat(input_ht.value);
-	console.log(valeur_ht);
-	if (isNaN(valeur_ht)){return false;} 
+	input_ht.value == "" ? "": valeur_ht = parseFloat(input_ht.value);
 	champs_valeur_ht.innerHTML = valeur_ht;
 	calculs_et_affichage();
 	event.preventDefault();
@@ -51,9 +47,7 @@ function change_valeur_tva(){
 	document.querySelector("form").onsubmit = recup_valeur_tva;
 }
 function recup_valeur_tva(){
-
-	taux_tva_choisi = parseFloat(input_tva.value);
-	console.log(taux_tva_choisi);
+	input_tva.value == "" ? "": taux_tva_choisi = parseFloat(input_tva.value);
 	calculs_et_affichage();
 	event.preventDefault();
 }
