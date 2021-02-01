@@ -41,7 +41,7 @@ function calculs_et_affichage(){
 }
 //----------------------------------------------------------------
 	//Saisie manuelle Prix HT
-champs_valeur_ht.onchange = change_valeur_ht;
+champs_valeur_ht.ondblclick = change_valeur_ht;
 function change_valeur_ht(){
 	champs_valeur_ht.innerHTML = '<form><input type="number" id="input_ht"></form>';
 	var input_ht = document.querySelector("#input_ht");

@@ -9,24 +9,12 @@ var taux_tva_proposes = document.querySelectorAll(".badge_tva");
 for(var index = 0; index < taux_tva_proposes.length; index++){
 	taux_tva_proposes[index].addEventListener("click", change_taux_tva);
 }
-
 function change_taux_tva(){
-	//taux_tva_choisi = parseFloat(this.querySelector(".taux_tva_possible").innerHTML);
-	console.log(this);
-	console.log(this.classList);
-	//console.log(this.classList.indexOf("btn-danger"));
-	//console.log((this.classList).indexOf("btn-danger"));
-	if ((this.classList).length >= 0){
-		console.log(this);
-		this.classList.remove("btn-warning");
-		this.classList.add("btn-danger");
-		console.log(this);
-	}
+	taux_tva_choisi = parseFloat(this.querySelector(".taux_tva_possible").innerHTML);
 	calculs_et_affichage();
 }
 	//Calculs et Affichage
 function calculs_et_affichage(){
-
 	champs_tva_choisi.innerHTML = taux_tva_choisi;
 	var valeur_tva = valeur_ht * taux_tva_choisi / 100;
 	document.querySelector("#valeur_tva").innerHTML = valeur_tva;
@@ -36,12 +24,10 @@ function calculs_et_affichage(){
 	document.querySelector("#prix_tva").innerHTML = valeur_tva;
 	document.querySelector("#pourcentage_tva").innerHTML = taux_tva_choisi;
 	document.querySelector("#prix_ttc").innerHTML = valeur_ttc;
-
 	//console.log(taux_tva_choisi);
 }
-//----------------------------------------------------------------
 	//Saisie manuelle Prix HT
-champs_valeur_ht.onchange = change_valeur_ht;
+champs_valeur_ht.ondblclick = change_valeur_ht;
 function change_valeur_ht(){
 	champs_valeur_ht.innerHTML = '<form><input type="number" id="input_ht"></form>';
 	var input_ht = document.querySelector("#input_ht");
@@ -66,3 +52,4 @@ function recup_valeur_tva(){
 	event.preventDefault();
 }
 //----------------------------------------------------------------
+

@@ -29,3 +29,9 @@ console.log(test_avec_return(15,3));
 function portee_des_variables() {var test = 7;	return test;}
 console.log(portee_des_variables()); //marche car le return dans la fonction
 //console.log(test); //ne marche pas car la variable n'existe pas en dehors de la fonction = variable locale
+
+	//Courante
+Math.round(X);//arrondi
+Math.random(); //Aléatoire entre 0 et 1 (1 exclu)
+
+replace("a enlever", "à mettre");

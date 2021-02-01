@@ -8,27 +8,28 @@
 	<meta charset="utf-8">
 
 </head>
-<body>
+<body> 
 <a href="../sommaire_js.html">Acceuil JS</a>   <br><br><br>
 <a href="../js_0_resume/exo_tp_js.html">Exos JS</a><br><br>
 €
 <div class="container bg-info">
 	<center><h1>Calculer avec la TVA (Et la quantité!)</h1></center>
 	<section class="p-3 fs-2 d-flex justify-content-between border-bottom border-2 border-white" id="les_titres">
-		<form>
+		<section class="row">
 			<span class="col-12 col-md-6 col-lg-3 d-flex">	
 				<label>Prix HT :</label>
-				<input type="number" id="valeur_ht" value="1000">
+				<span class="badge mx-1 bg-white text-dark" ><input type="int" id="valeur_ht" value="1000" style="border: none; font-weight: bold;"> €</span>
 			</span>
 			<span class="col-12 col-md-6 col-lg-3 d-flex">
 				<label>Quantité :</label>
-				<input type="number" id="quantite" value="1">
+				<input type="int" id="quantite" value="1" style="border: none; font-weight: bold;">
+				<span class="badge mx-1 bg-white text-dark" ><input type="number" id="quantite" value="1000" style="border: none; font-weight: bold;"></span>
 			</span>
 			<span class="col-12 col-md-6 col-lg-3 d-flex">
 				<label>TVA :</label>
-				<input type="number" id="tva" value="10">
+				<input type="int" id="tva" value="10">
 			</span>
-			<span class="col-12 col-md-6 col-lg-3 d-flex">
+			<span class="col-12 d-flex">
 				<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" value="5">
 				<label class="btn btn-warning badge_tva m-1 fs-3 px-3" for="option1">5 %</label>
 
@@ -50,9 +51,7 @@
 				<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" value="20">
 				<label class="btn btn-warning badge_tva m-1 fs-3 px-3" for="option4">20 %</label>
 			</span>
-
-			<br><input type="submit" name="submit" value="Envoyer">
-		</form>
+		</section>
 	</section>
 	<section class="p-3 fs-2 d-flex justify-content-between border-bottom border-2 border-white" id="le_calcul">
 		<span class="badge mx-1 bg-white text-dark" ><data id="valeur_ht">1000</data> €</span>

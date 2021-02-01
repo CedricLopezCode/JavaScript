@@ -42,7 +42,7 @@ function recup_valeur_ht(){
 	//Saisie manuelle tva
 champs_tva_choisi.ondblclick = change_valeur_tva;
 function change_valeur_tva(){
-	champs_tva_choisi.innerHTML = '<form><input type="number" id="input_tva"></form>';
+	champs_tva_choisi.innerHTML = '<form><input type="int" id="input_tva"></form>';
 	var input_tva = document.querySelector("#input_tva");
 	document.querySelector("form").onsubmit = recup_valeur_tva;
 }
