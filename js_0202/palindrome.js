@@ -16,7 +16,7 @@ function inversion(mot){
 	return mot_inverse
 }
 function comparaison(motun, motdeux){
-	console.log(mot_rentre);
+	console.log(motun);
 	motun == motdeux ? affichage_palindrome_oui() : affichage_palindrome_non();
 }
 function affichage_palindrome_oui(){
@@ -28,7 +28,7 @@ function affichage_palindrome_oui(){
 }
 
 function affichage_palindrome_non(){
-	console.log(mot_rentre);
+	
 	mot_rentre = $("#mot_rentre").val();
 	console.log(mot_rentre);
 	$("#reponse").html(mot_rentre + " n'est pas un palindrome");
