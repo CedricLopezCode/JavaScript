@@ -1,3 +1,4 @@
+$(document).ready(function(){});//permet d'attendre la fin du chargement de la page
 function test_sans_argument(){
 	console.log("test");
 }
@@ -35,3 +36,6 @@ Math.round(X);//arrondi
 Math.random(); //Aléatoire entre 0 et 1 (1 exclu)
 
 replace("a enlever", "à mettre");
+
+style="animation-duration: 1s; animation-delay: 300ms";// changer les delay et la vitesse d'animation
+setTimeout(function(){}, 6000); //met un delay avant de lancer
