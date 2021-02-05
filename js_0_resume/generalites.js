@@ -5,6 +5,9 @@
  \n = retour à la ligne
  \t = tabulation //à éviter entre les +
  */
+
+ $(document).ready(function(){});//permet d'attendre la fin du chargement de la page
+ //nécessite jQuerry
 		// Triple egal ===
 var donnee_rentree = prompt("Chiffre = 2021 ?");
 

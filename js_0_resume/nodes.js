@@ -7,8 +7,8 @@ document.querySelector("ul").append("nouvel_element");
 document.querySelector("ul").prepend("nouvel_element avant");//prepend mis avant
 nouvel_element.removeChild(contenu_li);//supprime un enfant
 
-var para = document.createElement("p");//cree la div
-var content = document.createTextNode("je suis le p");//cree du texte
+var para = document.createElement("div");//cree la div
+var content = document.createTextNode("je suis la div");//cree du texte
 para.appendChild(content);//met le text dans la div
 document.querySelector(".lorem").append(para);//place la div dans le html
 
