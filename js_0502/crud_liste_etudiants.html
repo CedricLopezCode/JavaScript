@@ -14,12 +14,12 @@
 <a role="button" style="background: aqua; margin-left: 30px;" href="../js_0_resume/exo_tp_js.html">Exos JS</a></center><br><br>
 <!--**************************************************************************-->
 <div class="container p-3 d-flex justify-content-center flex-wrap">
-	<h1 class="mx-auto mb-3">Liste des Etudiants</h1>
-	<a 
+	<h1 id="titre" class="mx-auto mb-3">Liste des Etudiants</h1>
+	<!--<a 
 		href="#formulaire_ajout">
-		<button class="btn btn-success mb-2 ms-auto" id="apparition_formulaire">Ajouter</button>
-	</a>
-	<table class="table table-dark table-striped mb-5">
+		<button class="btn btn-success mb-2 ms-auto" id="bouton_apparition_formulaire">Ajouter</button>
+	</a>-->
+	<table class="table table-dark table-striped mb-5" id="affichage_liste_etudiants">
 		<thead>
 			<tr>
 				<th scope="col">ID</th>
@@ -29,70 +29,9 @@
 				<th scope="col" colspan="2">Actions</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Cédric</td>
-				<td>Lopez</td>
-				<td>cedric@lopez.fr</td>
-				<td>U</td>
-				<td>D</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Moussa</td>
-				<td>Camara</td>
-				<td>Moussa@camaara.fr</td>
-				<td>U</td>
-				<td>D</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>Josse</td>
-				<td>Le Délégué</td>
-				<td>josse@delegue.fr</td>
-				<td>U</td>
-				<td>D</td>
-		</tr>
-		</tbody>
+		<tbody></tbody>
 	</table>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	<form method="#" action="#" id="formulaire_ajout" class="d-flex flex-column align-items-center w-auto p-4 bg-info">
+	<form id="formulaire_ajout" class="d-flex flex-column align-items-center w-auto p-4 bg-info">
 		<div class="mb-3 d-flex align-self-end">
 			<label class="form-label fs-5 me-3">Prénom:</label>
 			<input type="text" class="form-control w-auto" id="prenom_ajout" placeholder="Prénom">
