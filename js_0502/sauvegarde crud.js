@@ -1,5 +1,5 @@
 	//Flux normal Données Générale
-var liste_des_etudiants = [/*
+var liste_des_etudiants = [
 	{prenom : "a", nom : "aaaaa",email : "aaa@aaa" },
 	{prenom : "b", nom : "bbbbb",email : "bbb@bbb" },
 	{prenom : "c", nom : "ccccc",email : "ccc@ccc" },
@@ -25,7 +25,7 @@ var liste_des_etudiants = [/*
 	{prenom : "w", nom : "wwwww",email : "www@www" },
 	{prenom : "x", nom : "xxxxx",email : "xxx@xxx" },
 	{prenom : "y", nom : "yyyyy",email : "yyy@yyy" },
-	{prenom : "z", nom : "zzzzz",email : "zzz@zzz" }*/
+	{prenom : "z", nom : "zzzzz",email : "zzz@zzz" }
 ];
 var error = 0;
 var tableau_liste;
@@ -37,15 +37,13 @@ $(document).ready(function(){
 tableau_liste = $("tbody")[0];
 	//Affichage initial
 var affichage_liste_etudiants = $("#affichage_liste_etudiants");
-/*var formulaire_ajout = $("#formulaire_ajout");
-$(formulaire_ajout).hide();*/
-toggle_table_form();
+var formulaire_ajout = $("#formulaire_ajout");
+$(formulaire_ajout).hide();
 r_de_crud();
 
 	//Create
-	$("#bouton_apparition_formulaire").on("click", c_de_crud);
-	//$("#bouton_apparition_formulaire").click(creer_formulaire("ajout"));
-
+$("#bouton_apparition_formulaire").on("click", function(){formulaire_ajout.show();});
+formulaire_ajout.submit(c_de_crud);
 
 	//Read
 r_de_crud();
@@ -67,18 +65,15 @@ $(function(){ //pas ready = anonyme
 //Create
 function c_de_crud(){
 	//console.log("C de CRUD");
-	creer_formulaire("ajout");
 	var nouvel_eleve = {prenom : "", nom : "",email : "" };
-	$("#formulaire_ajout").click(function(){
-		if(verif_formulaire()){
-			nouvel_eleve.prenom = $("input").first().val();
-			nouvel_eleve.nom = $("#nom_ajout").val();
-			nouvel_eleve.email = $("input").last().val();
-			liste_des_etudiants.push(nouvel_eleve);
-			$("#les_formulaires").html("");
-			ajout_1_ligne();
-		}
-	});
+	if(verif_formulaire()){
+		nouvel_eleve.prenom = $("input").first().val();
+		nouvel_eleve.nom = $("#nom_ajout").val();
+		nouvel_eleve.email = $("input").last().val();
+		liste_des_etudiants.push(nouvel_eleve);
+		$("form").hide();
+		ajout_1_ligne();
+	}
 }
 function verif_formulaire(){
 	//preventDefault();
@@ -115,18 +110,18 @@ function r_de_crud(){
 	//console.log("R de CRUD");
 
 	$(tableau_liste).html("");
+	toggle_table_form();
 	affichage_lignes();
 }
 function toggle_table_form(){
 	if(liste_des_etudiants[0] === undefined){
 		$(affichage_liste_etudiants).hide();
 		$("#titre").append("<h2 id='promo_vide'>Pas d'étudiants inscrits </h2>");
-		c_de_crud();
+		$(formulaire_ajout).show();
 	}
 	else{
 		$(affichage_liste_etudiants).show();
 		$("#promo_vide").remove();
-		r_de_crud();
 	}
 }
 function ajout_1_ligne(){
@@ -138,13 +133,12 @@ function ajout_1_ligne(){
 	var td_email = '<td class="email">' + ($(liste_des_etudiants)[index_max]).email + '</td>';
 	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px"></td>';
 	var td_delete = '<td class="btn bouton_sup w-50 btn-danger"><img src="../Ressources_Test/Icones/xScope.ico" width="20px"></td>';//xScope tete_de_mort
-	/*$(tableau_liste).children().last().append(place);
+	$(tableau_liste).children().last().append(place);
 	$(tableau_liste).children().last().append(td_prenom);
 	$(tableau_liste).children().last().append(td_nom);
 	$(tableau_liste).children().last().append(td_email);
 	$(tableau_liste).children().last().append(td_update);
-	$(tableau_liste).children().last().append(td_delete);*/
-	$(tableau_liste).children().last().append(place,td_prenom,td_nom,td_email,td_update,td_delete);
+	$(tableau_liste).children().last().append(td_delete);
 	le_boutons_modif_suppr(index_max);
 	toggle_table_form();
 }
@@ -156,20 +150,13 @@ function affichage_ligne(index){
 	var td_email = '<td class="email">' + ($(liste_des_etudiants)[index]).email + '</td>';
 	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px"></td>';
 	var td_delete = '<td class="btn bouton_sup w-50 btn-danger"><img src="../Ressources_Test/Icones/xScope.ico" width="20px"></td>';//xScope tete_de_mort
-	/*$(tableau_liste).children().last().append(place);
+	$(tableau_liste).children().last().append(place);
 	$(tableau_liste).children().last().append(td_prenom);
 	$(tableau_liste).children().last().append(td_nom);
 	$(tableau_liste).children().last().append(td_email);
 	$(tableau_liste).children().last().append(td_update);
-	$(tableau_liste).children().last().append(td_delete);*/
-	$(tableau_liste).children().last().append(place,td_prenom,td_nom,td_email,td_update,td_delete);
+	$(tableau_liste).children().last().append(td_delete);
 	le_boutons_modif_suppr(index);
-}
-function le_boutons_modif_suppr(index){
-	var le_boutons_modif = $(".bouton_modif");
-	$(le_boutons_modif[index]).bind("click", u_de_crud);
-	var le_boutons_sup = $(".bouton_sup");
-	$(le_boutons_sup[index]).bind("click", d_de_crud);
 }
 function affichage_lignes(){
 	$(liste_des_etudiants).each(function(index){
@@ -183,48 +170,41 @@ function u_de_crud(){
 	//recupindex element.inArray(valeur, tableau)
 	//var position = $.inArray(this, liste_des_etudiants);
 	//var position = liste_des_etudiants.indexOf(this);
-	var tr_parent = $(this).parents("tr");
-	var position = $(tableau_liste).children().index(tr_parent);
+	position=2;
 	//recup data tableau[index].val x3
 	var prenom_avant = liste_des_etudiants[position].prenom;
 	var nom_avant = liste_des_etudiants[position].nom;
 	var email_avant = liste_des_etudiants[position].email;
 
 	//input.placeholder = data
-	creer_formulaire("modif");
-	var formulaire_modif = $("#formulaire_modif");
-	/*$("#submit").html("Modifier");
+	var formulaire_modif = $("#formulaire_ajout");
+	$("#submit").html("Modifier");
 	$(formulaire_modif).removeClass("bg-info");
-	$(formulaire_modif).addClass("bg-warning");*/
+	$(formulaire_modif).addClass("bg-warning");
 	$("#prenom_ajout").val(prenom_avant);
 	$("#nom_ajout").val(nom_avant);
 	$("#email_ajout").val(email_avant);
 	//form.show
-	//$(formulaire_modif).show();
+	$(formulaire_modif).show();
 
 
 	//verif formulaire
-
 	var nouvel_eleve = {prenom : prenom_avant, nom : nom_avant,email : email_avant };
-	
-	$(formulaire_modif).on("submit", function(){
-		liste_des_etudiants.splice(position,1);
-		if(verif_formulaire()){
-			nouvel_eleve.prenom = $("input").first().val();
-			nouvel_eleve.nom = $("#nom_ajout").val();
-			nouvel_eleve.email = $("input").last().val();
-			liste_des_etudiants.push(nouvel_eleve);
-			$("#les_formulaires").html("");
-			//remettre form
-			/*$("#submit").html("Ajouter");
-			$(formulaire_modif).addClass("bg-info");
-			$(formulaire_modif).removeClass("bg-warning");
-			$("form").hide();*/
-			ajout_1_ligne();
-		}
-		r_de_crud();
-	});
-	
+	liste_des_etudiants.splice(position,1);
+	if(verif_formulaire()){
+		nouvel_eleve.prenom = $("input").first().val();
+		nouvel_eleve.nom = $("#nom_ajout").val();
+		nouvel_eleve.email = $("input").last().val();
+		liste_des_etudiants.push(nouvel_eleve);
+		$("form").hide();
+		ajout_1_ligne();
+		//remettre form
+		$("#submit").html("Ajouter");
+		$(formulaire_modif).addClass("bg-info");
+		$(formulaire_modif).removeClass("bg-warning");
+		$("form").hide();
+	}
+	r_de_crud();
 	/* Obsolete
 	if(verif_formulaire_update(position)){
 			console.log([position].prenom);
@@ -279,8 +259,13 @@ function verif_email_pas_deja_resent_update(position){ //Obsolète
 	});
 	return doublon_email;
 }
-	
-function les_les_boutons_modif_suppr(){//Obsolète
+function le_boutons_modif_suppr(index){
+	var le_boutons_modif = $(".bouton_modif");
+	$(le_boutons_modif[index]).bind("click", u_de_crud);
+	var le_boutons_sup = $(".bouton_sup");
+	$(le_boutons_sup[index]).bind("click", d_de_crud);
+}	
+function les_les_boutons_modif_suppr(){
 	var les_boutons_modif = $(".bouton_modif");
 	$(les_boutons_modif).each(function(index){
 		$(les_boutons_modif[index]).bind("click", u_de_crud);
@@ -296,35 +281,24 @@ function d_de_crud(){
 	if (confirm("Voulez-vous vraiment supprimer ?")){
 		//recupindex element.inArray(valeur, tableau)
 		//var position = $("tr").index(this.parents());
-		var tr_parent = $(this).parents("tr");
-		var position = $(tableau_liste).children().index(tr_parent);
-		//Version triche
-		//var position = $(this).siblings().first().html();
-		liste_des_etudiants.splice(position-1,1);
+		console.log($(this));
+		console.log($(this).html());
+		console.log($(this).parent());
+		console.log($(this).parent().html());
+		console.log($(this).parent());
+		console.log($(this).parent().html());
+		//console.log($("tr").index(this).parents());
+		var position= 10;
+		console.log(position);
+		//var position = liste_des_etudiants.indexOf(this);
+		//position=2;
+		liste_des_etudiants.splice(position,1);
 	}
 	r_de_crud();
 }
-function creer_formulaire(utilisation){ //modif ou ajout
-	$("#les_formulaires").html("");
-	var bg;
-	var mot_bouton;
-	var id = "formulaire_" + utilisation;
-	switch(utilisation){
-		case "ajout":
-			bg = "bg-info";
-			mot_bouton = "Ajouter";
-		break;
-		case "modif":
-			bg = "bg-warning";
-			console.log("bg-warning ok");
-			mot_bouton = "Modifier";
-		break;
-		default:
-			console.log("modif ou ajout, pas autre chose");
-		break;
-	}
-	var nouveau_formulaire = '<form id="'+ id +'" class="d-flex flex-column align-items-center w-auto p-4 ' + bg + '">			<div class="mb-3 d-flex align-self-end">				<label class="form-label fs-5 me-3">Prénom:</label>				<input type="text" class="form-control w-auto" id="prenom_ajout" placeholder="Prénom">			</div>			<div class="mb-3 d-flex align-self-end ">				<label class="form-label fs-5 me-3">Nom de Famille:</label>				<input type="text" class="form-control w-auto" id="nom_ajout" placeholder="Nom de Famille">			</div>			<div class="mb-3 d-flex align-self-end ">				<label class="form-label fs-5 me-3">E-mail:</label>				<input type="email" class="form-control w-auto" id="email_ajout" placeholder="E-mail">			</div>			<button type="submit" class="btn btn-success w-25 mt-3" id="submit">' + mot_bouton + '</button>		</form>';
-	$("#les_formulaires").append(nouveau_formulaire);
-	$("#les_formulaires").scroll();
+function creer_formulaire(utilisation){
+	var nouveau_formulaire = '<form id="formulaire_ajout" class="d-flex flex-column align-items-center w-auto p-4 bg-info">			<div class="mb-3 d-flex align-self-end">				<label class="form-label fs-5 me-3">Prénom:</label>				<input type="text" class="form-control w-auto" id="prenom_ajout" placeholder="Prénom">			</div>			<div class="mb-3 d-flex align-self-end ">				<label class="form-label fs-5 me-3">Nom de Famille:</label>				<input type="text" class="form-control w-auto" id="nom_ajout" placeholder="Nom de Famille">			</div>			<div class="mb-3 d-flex align-self-end ">				<label class="form-label fs-5 me-3">E-mail:</label>				<input type="email" class="form-control w-auto" id="email_ajout" placeholder="E-mail">			</div>			<button type="submit" class="btn btn-success w-25 mt-3" id="submit">Ajouter</button>		</form>';
+($("table")[0]).after()
+
 }
 
