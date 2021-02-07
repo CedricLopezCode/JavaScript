@@ -1,10 +1,21 @@
 	//Flux normal Données Générale
 var liste_des_etudiants = [
-	{prenom : "C", nom : "CC",email : "s@g" },
-	{prenom : "f", nom : "fs",email : "s@ff" },
-	{prenom : "vfg", nom : "hb h",email : "d@d" },
-	{prenom : "rnr", nom : "dfd",email : "fs@fss" },
-	{prenom : "fh", nom : "ds",email : "qd@fsf" }
+	{prenom : "a", nom : "aaaaa",email : "aaa@aaa" },
+	{prenom : "b", nom : "bbbbb",email : "bbb@bbb" },
+	{prenom : "c", nom : "ccccc",email : "ccc@ccc" },
+	{prenom : "d", nom : "ddddd",email : "ddd@ddd" },
+	{prenom : "e", nom : "eeeee",email : "eee@eee" },
+	{prenom : "f", nom : "fffff",email : "fff@fff" },
+	{prenom : "g", nom : "ggggg",email : "ggg@ggg" },
+	{prenom : "h", nom : "hhhhh",email : "hhh@hhh" },
+	{prenom : "i", nom : "iiiii",email : "iii@iii" },
+	{prenom : "j", nom : "jjjjj",email : "jjj@jjj" },
+	{prenom : "k", nom : "kkkkk",email : "kkk@kkk" },
+	{prenom : "l", nom : "lllll",email : "lll@lll" },
+	{prenom : "m", nom : "mmmmm",email : "mmm@mmm" },
+	{prenom : "n", nom : "nnnnn",email : "nnn@nnn" },
+	{prenom : "o", nom : "ooooo",email : "ooo@ooo" },
+	{prenom : "p", nom : "ppppp",email : "ppp@ppp" }
 ];
 var error = 0;
 
@@ -16,21 +27,21 @@ $(document).ready(function(){
 var affichage_liste_etudiants = $("#affichage_liste_etudiants");
 var formulaire_ajout = $("#formulaire_ajout");
 $(formulaire_ajout).hide();
-r_de_crud;
+r_de_crud();
 
 	//Create
 $("#bouton_apparition_formulaire").on("click", function(){formulaire_ajout.show();});
 formulaire_ajout.submit(c_de_crud);
 
 	//Read
-	r_de_crud();
+r_de_crud();
 
 	//Update
-	les_les_boutons_modif_suppr();
+//les_les_boutons_modif_suppr();
 
 
 	//Delete
-	d_de_crud();
+	//d_de_crud();
 
 }) //Fin document ready
 //***************************************************************
@@ -85,6 +96,8 @@ function verif_email_pas_deja_resent(){
 //Read
 function r_de_crud(){
 	//console.log("R de CRUD");
+	var tbody =  $("tbody")[0];
+	$(tbody).html("");
 	toggle_table_form();
 	affichage_lignes();
 }
@@ -115,7 +128,7 @@ function ajout_1_ligne(){
 	$(t_body).children().last().append(td_email);
 	$(t_body).children().last().append(td_update);
 	$(t_body).children().last().append(td_delete);
-	les_les_boutons_modif_suppr();
+	le_boutons_modif_suppr(index_max);
 	toggle_table_form();
 }
 function affichage_ligne(index){
@@ -133,7 +146,7 @@ function affichage_ligne(index){
 	$(t_body).children().last().append(td_email);
 	$(t_body).children().last().append(td_update);
 	$(t_body).children().last().append(td_delete);
-	les_les_boutons_modif_suppr();
+	le_boutons_modif_suppr(index);
 }
 function affichage_lignes(){
 	$(liste_des_etudiants).each(function(index){
@@ -146,7 +159,7 @@ function u_de_crud(){
 	//console.log("U de CRUD");
 	//recupindex element.inArray(valeur, tableau)
 	//var position = $.inArray(this, liste_des_etudiants);
-	var position = liste_des_etudiants.indexOf(this);
+	//var position = liste_des_etudiants.indexOf(this);
 	position=2;
 	//recup data tableau[index].val x3
 	var prenom_avant = liste_des_etudiants[position].prenom;
@@ -156,6 +169,7 @@ function u_de_crud(){
 	//input.placeholder = data
 	var formulaire_modif = $("#formulaire_ajout");
 	$("#submit").html("Modifier");
+	console.log("modif")
 	$(formulaire_modif).removeClass("bg-info");
 	$(formulaire_modif).addClass("bg-warning");
 	$("#prenom_ajout").val(prenom_avant);
@@ -163,13 +177,29 @@ function u_de_crud(){
 	$("#email_ajout").val(email_avant);
 	//form.show
 	$(formulaire_modif).show();
-	$(formulaire_modif).hide();
+	
 
 
 	//verif formulaire
-	
+	var nouvel_eleve = {prenom : prenom_avant, nom : nom_avant,email : email_avant };
+	liste_des_etudiants.splice(position,1);
+	if(verif_formulaire()){
+		nouvel_eleve.prenom = $("input").first().val();
+		nouvel_eleve.nom = $("#nom_ajout").val();
+		nouvel_eleve.email = $("input").last().val();
+		liste_des_etudiants.push(nouvel_eleve);
+		$("form").hide();
+		ajout_1_ligne();
+		//remettre form
+		$("#submit").html("Ajouter");
+		$(formulaire_modif).addClass("bg-info");
+		$(formulaire_modif).removeClass("bg-warning");
+		$("form").hide();
+	}
+	r_de_crud();
+	/* Obsolete
 	if(verif_formulaire_update(position)){
-			console.log(liste_des_etudiants[position].prenom);
+			console.log([position].prenom);
 			console.log(liste_des_etudiants[position].nom) ;
 			console.log( liste_des_etudiants[position].email);
 			console.log(prenom_avant);
@@ -180,15 +210,15 @@ function u_de_crud(){
 		email_avant == $("input").first().val() ? "": liste_des_etudiants[position].email = $("input").last().val();
 
 		//remettre form
-		/*$("#submit").html("Ajouter");
+		$("#submit").html("Ajouter");
 		$(formulaire_modif).addClass("bg-info");
 		$(formulaire_modif).removeClass("bg-warning");
 		$("form").hide();
-		toggle_table_form();*/
-	}
-	}//fin de U de CRUD
+		toggle_table_form();
+	}*/
+}//fin de U de CRUD
 
-function verif_formulaire_update(position){
+function verif_formulaire_update(position){ //Obsolète
 	//preventDefault();
 	event.preventDefault();
 	error = 0;
@@ -206,7 +236,7 @@ function verif_formulaire_update(position){
 	console.log("error " + error)
 	return error == 0 ? true : false;
 }
-function verif_email_pas_deja_resent_update(position){
+function verif_email_pas_deja_resent_update(position){ //Obsolète
 	var doublon_email = false;
 	$(liste_des_etudiants).each(function(index){
 	console.log("index" + index)
@@ -221,23 +251,32 @@ function verif_email_pas_deja_resent_update(position){
 	});
 	return doublon_email;
 }
-	//tableau = tableau noueau
-	//toggle_table_form();
-
+function le_boutons_modif_suppr(index){
+	var le_boutons_modif = $(".bouton_modif");
+	$(le_boutons_modif[index]).bind("click", u_de_crud);
+	var le_boutons_sup = $(".bouton_sup");
+	$(le_boutons_sup[index]).bind("click", d_de_crud);
+}	
 function les_les_boutons_modif_suppr(){
 	var les_boutons_modif = $(".bouton_modif");
 	$(les_boutons_modif).each(function(index){
 		$(les_boutons_modif[index]).bind("click", u_de_crud);
-		
 	})
-	/*var les_boutons_sup = $(".bouton_sup");
+	var les_boutons_sup = $(".bouton_sup");
 	$(les_boutons_sup).each(function(index){
-		$(les_boutons_sup[index]).bind("click",d_de_crud);
-	
-	})*/
+		$(les_boutons_sup[index]).bind("click", d_de_crud);
+	})//Obsolète
 }
 //Delete
 function d_de_crud(){
 	console.log("D de CRUD");
+	if (confirm("Voulez-vous vraiment supprimer ?")){
+		//recupindex element.inArray(valeur, tableau)
+		//var position = $.inArray(this, liste_des_etudiants);
+		//var position = liste_des_etudiants.indexOf(this);
+		position=2;
+		liste_des_etudiants.splice(position,1);
+	}
+	r_de_crud();
 }
 
