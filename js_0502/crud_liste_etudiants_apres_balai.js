@@ -103,6 +103,8 @@ function verif_formulaire(){
 	event.preventDefault();
 	error = 0;
 	var les_inputs = $("input");
+		/*Correction
+	if(prenom === "" ||nom === ""||email === ""){}*/
 	les_inputs.each(function(index){
 		if($(les_inputs[index]).val() == ""){
 			$(les_inputs[index]).css("background", "red");

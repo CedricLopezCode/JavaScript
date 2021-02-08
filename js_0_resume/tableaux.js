@@ -12,7 +12,7 @@ fruits.length //donne la longueur du tableau ==> 5
 console.log(notes.length); //longueur du tableau ==> 5
 console.log(notes[3]); // notes à lindice 3 ==> 4
 console.log(notes.join()); // transforme en string
-
+table.rows.length //compte le nombre de ligne
 	//Parcourir un tableau en entier
 
 for (ligne = 0; ligne < fruits.length; ligne++){

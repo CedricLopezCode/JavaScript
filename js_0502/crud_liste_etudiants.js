@@ -85,6 +85,8 @@ function verif_formulaire(){
 	event.preventDefault();
 	error = 0;
 	var les_inputs = $("input");
+	/*Correction
+	if(prenom === "" ||nom === ""||email === ""){}*/
 	les_inputs.each(function(index){
 		if($(les_inputs[index]).val() == ""){
 			$(les_inputs[index]).css("background", "red");
@@ -93,9 +95,8 @@ function verif_formulaire(){
 			$(les_inputs[index]).css("background", "lime");
 		}	
 	});
-	if(liste_des_etudiants.length > 0){
-		verif_email_pas_deja_resent() ? error++ : "";
-	}
+	/*Correction
+	if(prenom === "" ||nom === ""||email === ""){}*/
 	return error == 0 ? true : false;
 }
 function verif_email_pas_deja_resent(){
@@ -129,7 +130,7 @@ function toggle_table_form(){
 		r_de_crud();
 	}
 }
-function ajout_1_ligne(){
+function ajout_1_ligne(){ 
 	var index_max = liste_des_etudiants.length - 1;
 	$(tableau_liste).append("<tr></tr>");
 	var place = '<th scope="row">' + (index_max+1) + '</th>';
@@ -147,6 +148,17 @@ function ajout_1_ligne(){
 	$(tableau_liste).children().last().append(place,td_prenom,td_nom,td_email,td_update,td_delete);
 	le_boutons_modif_suppr(index_max);
 	toggle_table_form();
+}
+function ajout_1_ligne_correction(prenom,nom,email){ 
+	var table = document.querySelector('.table');
+	var nouvelleLigne = table.insertRow(table.length);
+	table.rows.length //compte le nombre de ligne
+	var cellule_id = nouvelleLigne.insertCell(0) = table.rows.length - 1;
+	var cellule_prenom = nouvelleLigne.insertCell(1).innerHTML = prenom;
+	var cellule_nom = nouvelleLigne.insertCell(2).innerHTML = nom;
+	var cellule_email = nouvelleLigne.insertCell(3).innerHTML = email;
+	var cellule_U = nouvelleLigne.insertCell(4);
+	var cellule_D = nouvelleLigne.insertCell(5);
 }
 function affichage_ligne(index){
 	$(tableau_liste).append("<tr></tr>");
