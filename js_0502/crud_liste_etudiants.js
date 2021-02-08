@@ -1,5 +1,5 @@
 	//Flux normal Données Générale
-var liste_des_etudiants = [/*
+var liste_des_etudiants = [
 	{prenom : "a", nom : "aaaaa",email : "aaa@aaa" },
 	{prenom : "b", nom : "bbbbb",email : "bbb@bbb" },
 	{prenom : "c", nom : "ccccc",email : "ccc@ccc" },
@@ -25,7 +25,7 @@ var liste_des_etudiants = [/*
 	{prenom : "w", nom : "wwwww",email : "www@www" },
 	{prenom : "x", nom : "xxxxx",email : "xxx@xxx" },
 	{prenom : "y", nom : "yyyyy",email : "yyy@yyy" },
-	{prenom : "z", nom : "zzzzz",email : "zzz@zzz" }*/
+	{prenom : "z", nom : "zzzzz",email : "zzz@zzz" }
 ];
 var error = 0;
 var tableau_liste;
@@ -300,8 +300,10 @@ function d_de_crud(){
 		var position = $(tableau_liste).children().index(tr_parent);
 		//Version triche
 		//var position = $(this).siblings().first().html();
-		liste_des_etudiants.splice(position-1,1);
+		console.log(position);
+		liste_des_etudiants.splice(position,1);
 	}
+	toggle_table_form();
 	r_de_crud();
 }
 function creer_formulaire(utilisation){ //modif ou ajout
