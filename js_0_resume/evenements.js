@@ -10,7 +10,7 @@ element.onfocus = function(); //utilisé principalement sur les formulaire //par
 element.onkeyup = function(); //utilisé principalement sur les formulaire pour dire avant la validation que ça va pas //par exemple les email qui ont besoin de *@*.*
 element.onkeydown = function(); //utilisé principalement sur les formulaire //par exemple fond rouge si un probleme
 element.onsubmit = function(); //utilisé principalement sur les formulaire //par exemple fond rouge si un probleme
-
+//bien pour les form car submit bloque que ça
 	//ecouteur
 objet.addEventListener("keyup", function);
 event.preventDefault(); //pour pas que ça recharge la page

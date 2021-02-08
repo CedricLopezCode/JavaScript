@@ -22,6 +22,11 @@
 	1 > 5 ? console.log("Vrai") : console.log("Faux"); 
 	//Faux donc prend le 2eme après le ?(Après les :)
 
+	//Pour utiliser un return dans un ternaire c'est en direct
+	function test_return_ternaire(){
+	return 1 == 1 ? true :  false;
+	}
+	
 
 				//Switch case = comparaison valeur exacte
 	//classique

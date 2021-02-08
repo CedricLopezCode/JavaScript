@@ -34,9 +34,9 @@ for(var index = 0; index < toutes_les_images.length; index++){
 	toutes_les_images[index].addEventListener('click', clique);
 }
 
-//Galerie version JS
-$('.item').each(function(index){
-	$(".item")[index].addEventListener('click', clique);
+//Galerie version JQuery
+$(".item").each(function(index){
+	$(".item")[index].addEventListener("click", clique);
 });	
 function clique() {
 	var getSrc = $(this).attr("src");
