@@ -136,7 +136,7 @@ function ajout_1_ligne(){
 	var td_prenom = '<td class="prenom">' + ($(liste_des_etudiants)[index_max]).prenom + '</td>';
 	var td_nom = '<td class="nom">' + ($(liste_des_etudiants)[index_max]).nom + '</td>';
 	var td_email = '<td class="email">' + ($(liste_des_etudiants)[index_max]).email + '</td>';
-	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px"></td>';
+	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><a 		href="#les_formulaires">		<img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px">	</a></td>';
 	var td_delete = '<td class="btn bouton_sup w-50 btn-danger"><img src="../Ressources_Test/Icones/xScope.ico" width="20px"></td>';//xScope tete_de_mort
 	/*$(tableau_liste).children().last().append(place);
 	$(tableau_liste).children().last().append(td_prenom);
@@ -154,7 +154,7 @@ function affichage_ligne(index){
 	var td_prenom = '<td class="prenom">' + ($(liste_des_etudiants)[index]).prenom + '</td>';
 	var td_nom = '<td class="nom">' + ($(liste_des_etudiants)[index]).nom + '</td>';
 	var td_email = '<td class="email">' + ($(liste_des_etudiants)[index]).email + '</td>';
-	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px"></td>';
+	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><a 		href="#les_formulaires">		<img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px">	</a></td>';
 	var td_delete = '<td class="btn bouton_sup w-50 btn-danger"><img src="../Ressources_Test/Icones/xScope.ico" width="20px"></td>';//xScope tete_de_mort
 	/*$(tableau_liste).children().last().append(place);
 	$(tableau_liste).children().last().append(td_prenom);

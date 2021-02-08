@@ -64,7 +64,7 @@ $(function(){ //pas ready = anonyme
 function c_de_crud(){
 	//console.log("C de CRUD");
 	creer_formulaire("ajout");
-	var nouvel_eleve = {prenom : "", nom : "",email : "" };
+	var nouvel_eleve = {prenom : "", nom : "", email : "" };
 	$("#formulaire_ajout").click(function(){
 		if(verif_formulaire()){
 			nouvel_eleve.prenom = $("input").first().val();
@@ -100,7 +100,6 @@ function creer_formulaire(utilisation){ //modif ou ajout
 	$("#les_formulaires").scroll();
 }
 function verif_formulaire(){
-	//preventDefault();
 	event.preventDefault();
 	error = 0;
 	var les_inputs = $("input");
@@ -153,7 +152,7 @@ function ajout_1_ligne(){
 	var td_prenom = '<td class="prenom">' + ($(liste_des_etudiants)[index_max]).prenom + '</td>';
 	var td_nom = '<td class="nom">' + ($(liste_des_etudiants)[index_max]).nom + '</td>';
 	var td_email = '<td class="email">' + ($(liste_des_etudiants)[index_max]).email + '</td>';
-	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px"></td>';
+	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><a 		href="#les_formulaires">		<img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px">	</a><img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px"></td>';
 	var td_delete = '<td class="btn bouton_sup w-50 btn-danger"><img src="../Ressources_Test/Icones/xScope.ico" width="20px"></td>';//xScope tete_de_mort
 	$(tableau_liste).children().last().append(place,td_prenom,td_nom,td_email,td_update,td_delete);
 	le_boutons_modif_suppr(index_max);
@@ -165,7 +164,7 @@ function affichage_ligne(index){
 	var td_prenom = '<td class="prenom">' + ($(liste_des_etudiants)[index]).prenom + '</td>';
 	var td_nom = '<td class="nom">' + ($(liste_des_etudiants)[index]).nom + '</td>';
 	var td_email = '<td class="email">' + ($(liste_des_etudiants)[index]).email + '</td>';
-	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px"></td>';
+	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><a 		href="#les_formulaires">		<img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px">	</a></td>';
 	var td_delete = '<td class="btn bouton_sup w-50 btn-danger"><img src="../Ressources_Test/Icones/xScope.ico" width="20px"></td>';//xScope tete_de_mort
 	$(tableau_liste).children().last().append(place,td_prenom,td_nom,td_email,td_update,td_delete);
 	le_boutons_modif_suppr(index);
