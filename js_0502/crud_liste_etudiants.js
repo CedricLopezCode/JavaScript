@@ -95,11 +95,13 @@ function verif_formulaire(){
 			$(les_inputs[index]).css("background", "lime");
 		}	
 	});
-	/*Correction
-	if(prenom === "" ||nom === ""||email === ""){}*/
+/*Correction
+if(prenom === "" ||nom === ""||email === ""){}*/
 	return error == 0 ? true : false;
 }
 function verif_email_pas_deja_resent(){
+/*Correction
+var email_tableau = table.getElementbyTagName("tr")[index].cells[3].innerHTML;*/ 
 	var doublon_email = false;
 	$(liste_des_etudiants).each(function(index){
 		if (($(liste_des_etudiants)[index]).email == $("input").last().val()){
@@ -131,6 +133,25 @@ function toggle_table_form(){
 	}
 }
 function ajout_1_ligne(){ 
+	var index_max = liste_des_etudiants.length - 1;
+	$(tableau_liste).append("<tr></tr>");
+	var place = '<th scope="row">' + (index_max+1) + '</th>';
+	var td_prenom = '<td class="prenom">' + ($(liste_des_etudiants)[index_max]).prenom + '</td>';
+	var td_nom = '<td class="nom">' + ($(liste_des_etudiants)[index_max]).nom + '</td>';
+	var td_email = '<td class="email">' + ($(liste_des_etudiants)[index_max]).email + '</td>';
+	var td_update = '<td class="btn bouton_modif w-50 btn-warning"><a 		href="#les_formulaires">		<img src="../Ressources_Test/Icones/Text_Editor.ico" width="20px">	</a></td>';
+	var td_delete = '<td class="btn bouton_sup w-50 btn-danger"><img src="../Ressources_Test/Icones/xScope.ico" width="20px"></td>';//xScope tete_de_mort
+	/*$(tableau_liste).children().last().append(place);
+	$(tableau_liste).children().last().append(td_prenom);
+	$(tableau_liste).children().last().append(td_nom);
+	$(tableau_liste).children().last().append(td_email);
+	$(tableau_liste).children().last().append(td_update);
+	$(tableau_liste).children().last().append(td_delete);*/
+	$(tableau_liste).children().last().append(place,td_prenom,td_nom,td_email,td_update,td_delete);
+	le_boutons_modif_suppr(index_max);
+	toggle_table_form();
+}
+function ajout_meme_ligne(position){ 
 	var index_max = liste_des_etudiants.length - 1;
 	$(tableau_liste).append("<tr></tr>");
 	var place = '<th scope="row">' + (index_max+1) + '</th>';
@@ -225,14 +246,15 @@ function u_de_crud(){
 			nouvel_eleve.prenom = $("input").first().val();
 			nouvel_eleve.nom = $("#nom_ajout").val();
 			nouvel_eleve.email = $("input").last().val();
-			liste_des_etudiants.push(nouvel_eleve);
+			
 			$("#les_formulaires").html("");
 			//remettre form
 			/*$("#submit").html("Ajouter");
 			$(formulaire_modif).addClass("bg-info");
 			$(formulaire_modif).removeClass("bg-warning");
 			$("form").hide();*/
-			ajout_1_ligne();
+			liste_des_etudiants.splice(position, 0, nouvel_eleve);//Pour pas changer la position
+			//ajout_1_ligne();
 		}
 		r_de_crud();
 	});
