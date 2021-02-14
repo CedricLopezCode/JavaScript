@@ -19,7 +19,7 @@ document.getElementsByTagName("nom de la balise"); //nécessite d'etre juste ava
 //selectionne tout entre les balise y compris les balises mais dans un tableau
 document.getElementsByTagName("nom de la balise").innerHTML; //nécessite d'etre juste avant la balise fermante body
 //permet de selectionner seulement à l'intérieur des balises mais dans un tableau
-	
+element.parentNode()	
 
 	//Raccourcis
 document.querySelector("#id");

@@ -13,3 +13,4 @@ para.appendChild(content);//met le text dans la div
 document.querySelector(".lorem").append(para);//place la div dans le html
 
 
+element.parentNode()

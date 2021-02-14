@@ -35,7 +35,8 @@ $(item).each(function(index){
 	//Methodes
 // jQuerry-------------------------------JS Pur
 // Attributs
-element.attr("src") 		= element.getAttribute("src")
+element.attr("src") ;		= element.getAttribute("src");
+element.empty(); 			= element.innerHTML = "";
 //Classes 
 element.addClass(""); 		= element.classList.add("");
 element.removeClass(""); 	= element.classList.remove("");
